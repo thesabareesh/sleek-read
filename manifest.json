@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+
+  "name": "Sleek Read ",
+  "description": "A better, smarter and more readable web.",
+  "version": "1.0",
+  "page_action": {
+    "default_icon": "icon-enabled.png",
+    "default_title": "Toggle sleek mode."
+  },
+  "permissions": [
+      "tabs", "http://*/*", "https://*/*"
+  ],
+  "background": {
+    "scripts": ["js/background.js"]
+  },
+  "content_scripts": [
+    {
+      "all_frames": true,
+      "matches": ["<all_urls>"],
+      "js": ["js/jquery.min.js","js/app.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "icons": {
+    "128": "icon-enabled.png"
+  },
+  "web_accessible_resources": ["images/*.png"]
+}
