@@ -18,7 +18,7 @@
     {
       "all_frames": true,
       "matches": ["<all_urls>"],
-      "js": ["js/jquery.min.js","js/app.js"],
+      "js": ["js/jquery.min.js","js/sleek.js"],
       "run_at": "document_start"
     }
   ],
