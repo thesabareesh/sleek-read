@@ -1,0 +1,33 @@
+
+
+body.sleek {
+  padding: 1%;
+  margin: 0px;
+  color: #333;
+  background: rgba(0, 0, 0, .5);
+  font-size: 12pt;
+}
+
+
+body.sleek #sleek-ruler{
+  width: 80%;
+  max-width: 850px;
+  min-width: 640px;
+  padding: 40px 100px;
+  margin: auto;
+  background: #fcfcfc;
+  box-shadow: 0 0 5px rgba(0, 0, 0, .7);
+}
+
+body.sleek a,
+body.sleek a:hover,
+body.sleek a:active,
+body.sleek a:visited,
+body.sleek a:link {
+  color: #00509C;
+  text-decoration: none;
+}
+
+ .highlight {
+    background-color: yellow;
+  }

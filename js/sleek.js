@@ -9,7 +9,7 @@ function start(){
 		document.title="start sleeking";
     	enableSleek();
   	}else {
-    window.setTimeout(startUp, 100);
+    window.setTimeout(start, 100);
   	};
 }
 function removeElements(els) {
@@ -24,28 +24,54 @@ function removeAttr(el, attrs) {
   }
 }
 /*Magic sauce*/
-function enableSleek(){
-	if(sleeked==false){
-		sleeked=true;
-		for (i = 0; i < clutterElements.length; ++i) {
-    		removeElements(document.querySelectorAll(clutterElements[i]));
-    	}
-		var all = document.querySelectorAll('*');
-		removeAttr(document.body, [ 'color', 'bgcolor', 'text', 'link', 'vlink', 'alink' ]);
-		for (var i = all.length - 1; i > -1; i--) {
-      		var el = all[i];
-     		 removeAttr(el, [ 'face', 'size', 'color', 'background', 'border', 'bgcolor', 'width', 'height', 'style' ]);
-    	}	
-    	var images = document.querySelectorAll('img');
 
-    	for (var i = images.length - 1; i > -1; i--) {
-      		var el = images[i];
-      		if (el.width < 22 || el.height < 22) {
-        		el.className = 'hidden';
-      		}
-    	}
-	}
+function grabArticle(article){
+    alert("article is" +article);
+    $('body').empty().append("<article>"+article+"</article");
+  
 }
+
+function removeClutter(){
+
+  document.body.className = 'sleek';
+  document.body.innerHTML = '<div id="sleek-ruler">'+document.body.innerHTML+'</div>';
+
+  for (i = 0; i < clutterElements.length; i++) {
+        removeElements(document.querySelectorAll(clutterElements[i]));
+      }
+
+    var all = document.querySelectorAll('*');
+    removeAttr(document.body, [ 'color', 'bgcolor', 'text', 'link', 'vlink', 'alink' ]);
+    for (var i = all.length - 1; i > -1; i--) {
+          var el = all[i];
+         removeAttr(el, [ 'face', 'size', 'color', 'background', 'border', 'bgcolor', 'width', 'height', 'style' ]);
+      } 
+      var images = document.querySelectorAll('img');
+
+      for (var i = images.length - 1; i > -1; i--) {
+          var el = images[i];
+          if (el.width < 22 || el.height < 22) {
+            el.className = 'hidden';
+          }
+      }
+}
+
+function enableSleek(){
+    
+  if(sleeked==false){
+    sleeked=true;
+    
+    var article=$("article").html();
+    if(article!="" && article!=null){
+      grabArticle(article);
+    }
+    removeClutter();
+	
+    
+	}
+  
+}
+
 function disableSleek(){
 	if (sleeked==true) {
     	location.reload();
