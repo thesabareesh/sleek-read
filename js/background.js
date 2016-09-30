@@ -1,5 +1,4 @@
 //Background functions
-
 function get(name, def) {
     var val = localStorage[name];
     if (typeof val != 'undefined') {
@@ -22,10 +21,10 @@ function update(tabId) {
         var enabled = isReaderEnabled(Tab.url);
         if (enabled) {
             var icon = 'icon-enabled.png';
-             chrome.tabs.sendRequest(Tab.id, "enable-sleek");   
+            chrome.tabs.sendRequest(Tab.id, "enable-sleek");
         } else {
             var icon = 'icon-disabled.png';
-            chrome.tabs.sendRequest(Tab.id, "disable-sleek"); 
+            chrome.tabs.sendRequest(Tab.id, "disable-sleek");
         }
 
         chrome.pageAction.setIcon({
@@ -40,15 +39,15 @@ function update(tabId) {
 }
 
 function isReaderEnabled(url) {
-    return get('reader@'+url);
+    return get('reader@' + url);
 }
 
 function enableReader(url) {
-    return set('reader@'+url, true);
+    return set('reader@' + url, true);
 }
 
 function disableReader(url) {
-    return set('reader@'+url, false);
+    return set('reader@' + url, false);
 }
 
 function toggleReader(url) {
@@ -71,6 +70,4 @@ chrome.tabs.onUpdated.addListener(update);
 
 chrome.tabs.getSelected(null, update);
 
-chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
-});
-
+chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {});

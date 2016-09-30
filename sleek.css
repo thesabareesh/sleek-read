@@ -1,33 +1,101 @@
-
-
 body.sleek {
-  padding: 1%;
-  margin: 0px;
-  color: #333;
-  background: rgba(0, 0, 0, .5);
-  font-size: 12pt;
+    padding: 1%;
+    margin: 0px;
+    color: #333;
+    background: rgba(0, 0, 0, .5);
+    font-size: 12pt;
 }
-
-
-body.sleek #sleek-ruler{
-  width: 80%;
-  max-width: 850px;
-  min-width: 640px;
-  padding: 40px 100px;
-  margin: auto;
-  background: #fcfcfc;
-  box-shadow: 0 0 5px rgba(0, 0, 0, .7);
+body.sleek #sleek-ruler {
+    width: 80%;
+    max-width: 850px;
+    min-width: 640px;
+    padding: 40px 100px;
+    margin: auto;
+    background: #fcfcfc;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .7);
 }
-
 body.sleek a,
 body.sleek a:hover,
 body.sleek a:active,
 body.sleek a:visited,
 body.sleek a:link {
-  color: #00509C;
-  text-decoration: none;
+    color: #00509C;
+    text-decoration: none;
 }
+.highlight {
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 9px 18px 6px;
+    /*background-color: yellow;*/
+    
+    cursor: -webkit-zoom-in;
+    cursor: -moz-zoom-in;
+}
+/* The Modal (background) */
 
- .highlight {
-    background-color: yellow;
-  }
+.modal {
+    position: fixed;
+    /* Stay in place */
+    
+    z-index: 999;
+    /* Sit on top */
+    
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    
+    height: 100%;
+    /* Full height */
+    
+    overflow: auto;
+    /* Enable scroll if needed */
+    
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+/*div:not(.modal){
+    color:red;
+}
+*/
+/* Modal Content/Box */
+
+.modal-content {
+    /*background-color: #fefefe;
+    
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; */
+    
+    margin: 10% auto;
+    font-family: Georgia, serif;
+    text-shadow: none;
+    color: rgb(68, 68, 17);
+    font-size: 16px;
+    line-height: 25px;
+    position: absolute;
+    z-index: 99991;
+    margin-left: -360px;
+    width: 600px;
+    margin-right: 0px;
+    left: 50%;
+    text-align: left;
+    background: rgb(255, 255, 250);
+    overflow: hidden;
+    padding: 60px;
+    border-radius: 5px;
+    /* The Close Button */
+    
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
