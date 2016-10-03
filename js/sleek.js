@@ -2,7 +2,6 @@
  * Created by SABAREESH on 25-Sep-16.
  */
 var sleeked = false;
-
 var prevClick = false;
 var prevHighlight = false;
 var clutterElements = ["script", "style", "iframe", "combx", "comment", "link[rel=stylesheet]",
@@ -10,13 +9,13 @@ var clutterElements = ["script", "style", "iframe", "combx", "comment", "link[re
 ];
 
 function start() {
-    if (document.readyState == 'complete') {
-
+    enableSleek();
+    /*if (document.readyState == 'complete') {
         enableSleek();
         //showSleek();
     } else {
         window.setTimeout(start, 100);
-    };
+    };*/
 }
 
 function removeElements(els) {
@@ -101,6 +100,8 @@ function showSleek(elem) {
   </div>";
 
     $("body").append(card);
+    $("#myModal").fadeIn('slow');
+    $(document.body).contents().not("#myModal").toggleClass('blur');
     document.removeEventListener("mousemove", mouseMoveListener);
     document.removeEventListener("click", clickListener);
 
@@ -108,10 +109,16 @@ function showSleek(elem) {
 
 
     $("#myModal").click(function() {
-        $("#myModal").remove();
+        $("#myModal").fadeOut('slow', function() {
+            $(this).remove();
+        });
+
+        $(document.body).contents().not("#myModal").toggleClass('blur');
         document.addEventListener('mousemove', mouseMoveListener);
         document.addEventListener('click', clickListener);
         prevClick = false;
+    }).children().click(function(e) {
+        return false;
     });
 }
 var clickListener = function(event) {

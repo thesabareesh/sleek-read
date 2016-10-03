@@ -32,6 +32,7 @@ body.sleek a:link {
 /* The Modal (background) */
 
 .modal {
+    display: none;
     position: fixed;
     /* Stay in place */
     
@@ -86,16 +87,25 @@ body.sleek a:link {
     padding: 60px;
     border-radius: 5px;
     /* The Close Button */
-    
-    .close {
-        color: #aaa;
-        float: right;
-        font-size: 28px;
-        font-weight: bold;
-    }
-    .close:hover,
-    .close:focus {
-        color: black;
-        text-decoration: none;
-        cursor: pointer;
-    }
+}
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+/*blur*/
+
+.blur {
+    filter: blur(3px);
+    -webkit-filter: blur(3px);
+    -moz-filter: blur(3px);
+    -ms-filter: blur(3px);
+    -o-filter: blur(3px);
+}
